@@ -22,19 +22,27 @@
  * console.logging the function's return value
  */
 
-function analyzeColor(color,user) {
-  if(color && user === "green") {
-       return "green is the color of grass." && alert ("green is the color of grass.")
-   } else if (color && user === "blue") {
-       return alert ("blue is the color of the ocean.")
-   } else if (color && user === "yellow") {
-       return alert ("yellow is the color of the Sun.")
+var userColor = "What's your favorite color?"
+var userPrompt = prompt(userColor);
+alert(analyzeColor(getColor(userPrompt)))
+
+function analyzeColor(color) {
+  if(color === "green") {
+      // alert ("green is the color of grass.")
+       return "green is the color of grass."
+   } else if (color === "blue") {
+      // alert ("blue is the color of the ocean.")
+       return "blue is the color of the ocean."
+   } else if (color === "yellow") {
+      // alert ("yellow is the color of the Sun.")
+       return "yellow is the color of the Sun."
    } else {
-       return alert ("I don't know anything about that color")
+      // alert ("I don't know anything about that color")
+       return "I don't know anything about that color"
    }
 }
- console.log(analyzeColor("blue", userColorResult))
-
+ console.log(analyzeColor(getColor(userPrompt)))
+// console.log(userAlert)
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -56,24 +64,24 @@ console.log(analyzeColor(randomColor))
      * Comment out the code above, and refactor your function to use a switch-case statement
      */
 
-    function analyzeColor(color) {
-    switch (color) {
-        case "green":
-            console.log("green is the color of grass.")
-            break;
-        case"blue":
-            console.log("blue is the color of the ocean.")
-            break;
-        case"yellow":
-            console.log("yellow is the color of the Sun.")
-            break;
-        default:
-            console.log("I don't know anything about that color")
-            break;
-    }
-}
+//     function analyzeColor(color) {
+//     switch (color) {
+//         case "green":
+//             console.log("green is the color of grass.")
+//             break;
+//         case"blue":
+//             console.log("blue is the color of the ocean.")
+//             break;
+//         case"yellow":
+//             console.log("yellow is the color of the Sun.")
+//             break;
+//         default:
+//             console.log("I don't know anything about that color")
+//             break;
+//     }
+// }
 
-    console.log(analyzeColor("blue"))
+    // console.log(analyzeColor("blue"))
 
 /**
  * TODO:
@@ -82,10 +90,17 @@ console.log(analyzeColor(randomColor))
  * function to show it to the user.
  */
 
-var userColor = "What's your favorite color?"
 
-var userColorResult = prompt(userColor)
 
+function getColor(userPrompt) {
+    return userPrompt
+}
+console.log(getColor())
+
+// function responseAlert() {
+//     return userAlert
+// }
+// console.log(responseAlert())
 
 
 
