@@ -126,6 +126,29 @@ console.log(getColor())
  * return value.
  */
 
+
+
+function calculateTotal(luckyNum, totalAmount) {
+ var discountPercent;
+    if(luckyNum === 0) {
+        discountPercent = 0.00
+    } else if(luckyNum === 1) {
+        discountPercent = 0.10
+    } else if(luckyNum === 2) {
+        discountPercent = 0.25
+    } else if(luckyNum === 3) {
+        discountPercent = 0.35
+    } else if(luckyNum === 4) {
+        discountPercent = 0.50
+    } else if(luckyNum === 5) {
+        discountPercent = 1.00
+    }
+ var discount = totalAmount * discountPercent;
+ var discountedPrice = totalAmount - discount;
+
+    return discountedPrice
+}
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -135,8 +158,10 @@ console.log(getColor())
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
 
+console.log(calculateTotal(luckyNumber, 100))
+console.log(luckyNumber)
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
