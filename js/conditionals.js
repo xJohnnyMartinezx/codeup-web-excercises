@@ -1,7 +1,7 @@
 "use strict";
 
 /* ########################################################################## */
-
+//
 /**
  * TODO:
  * Create a function named `analyzeColor` that accepts a string that is a color
@@ -24,7 +24,7 @@
 
 var userColor = "What's your favorite color?"
 var userPrompt = prompt(userColor);
-alert(analyzeColor(getColor(userPrompt)))
+alert(analyzeColor(getColor(userPrompt)));
 
 function analyzeColor(color) {
   if(color === "green") {
@@ -146,8 +146,12 @@ function calculateTotal(luckyNum, totalAmount) {
  var discount = totalAmount * discountPercent;
  var discountedPrice = totalAmount - discount;
 
+    console.log("The discounted price is: " + discountedPrice);
+
     return discountedPrice
 }
+
+
 
 /**
  * TODO:
@@ -180,3 +184,154 @@ console.log(luckyNumber)
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+
+/////Solved Exercise
+
+var userEnterNumberYesOrNo = confirm("Would you like to enter an number?");
+// console.log(userEnterNumberYesOrNo);
+
+function initialUserAction() {
+
+    var userInput;
+    var userInt;
+    var yesMessage = "Perfect! Please enter a number.";
+
+    if (userEnterNumberYesOrNo === true) {
+        userInput = prompt(yesMessage);
+        userInt = parseInt(userInput);
+
+    } else {
+        return alert("Oook, bye Felicia!");
+    }
+    // console.log(userInput);
+    // console.log(typeof userInput);
+    // console.log(userInt);
+    // console.log(typeof userInt);
+    if (isNaN(userInt)) {
+        userInput = prompt("You did NOT enter a number. Please enter a number.");
+        userInt = parseInt(userInput);
+        console.log(userInt);
+    }
+    if (!isNaN(userInt)) {
+        alert("Your chosen number + 100 = " + (userInt + 100));
+    }
+
+    if (userInput % 2 === 1) {
+        alert("Your number is odd");
+    } else {
+        alert("Your Chosen number is even.");
+    }
+
+    if (Math.sign(userInput) === 1) {
+        alert("Your chosen number is Positive.");
+    } else {
+        alert("Your chosen number is Negative.");
+    }
+}
+
+initialUserAction(userEnterNumberYesOrNo);
+
+
+/////////All commented out code below this line are my trial and error attempts
+// Just leaving it in case I need to refer to it in the future.
+
+
+    // var userEnterNumberYesOrNo = confirm("Would you like to enter an number?");
+    // console.log(userEnterNumberYesOrNo);
+    //
+    //
+    // if (userEnterNumberYesOrNo === true) {
+    //
+    //     var userInput = prompt("Perfect! Please enter a number.");
+    //     var userInt = parseInt(userInput);
+    //     // alert("Your chosen number + 100 = " + (userInt + 100));
+    //     console.log(userInt);
+    //     console.log(typeof userInt);
+    // } else {
+    //     alert("Oook, bye Felicia!");
+    // }
+    //
+    // if (isNaN(userInput)) {
+    //     prompt(alert("You did NOT enter a number. Please enter a number."));
+    // } else {
+    //
+    // }
+    // if (!isNaN(userInt)) {
+    //     alert("Your chosen number + 100 = " + (userInt + 100));
+    // }
+    //
+    // if (userInput % 2 === 1) {
+    //     alert("Your number is odd");
+    // }
+    //
+    // if (Math.sign(userInput) === 1) {
+    //     alert("Your chosen number is Positive.")
+    // } else {
+    //     alert("Your chosen number is Negative.")
+    // }
+
+
+////////////////////////////////////////////////////
+
+// } else if (alert(userInput) === "" && isNaN(userInt)) {
+//     alert("You did NOT enter a number. Please enter a number.");
+
+
+
+// else {
+//     alert("Your chosen number + 100 = " + (userInt + 100));
+// }
+
+
+//     console.log(userInt);
+//     console.log(typeof userInt);
+
+// else if (userInput) {
+//     alert("You did NOT enter a number. Please enter a number.");
+// }
+// else if (userInput % 2 === 1) {
+//     alert("Your number is odd");
+// } else if (Math.sign(userInput) === 1) {
+//     alert("Your chosen number is Positive.")
+// } else {
+//     alert("Your chosen number is Negative.")
+// }
+//
+//
+//
+// alert("Oook, bye Felicia!");
+
+
+
+// var test = -27
+//
+// var testNum = Math.sign(test)
+//
+// // console.log(testNum + 100);
+// console.log(testNum);
+// console.log(typeof testNum);
+
+
+// var userEnterNumberYesOrNo = confirm("Would you like to enter an number?");
+// console.log(userEnterNumberYesOrNo);
+//
+// if (userEnterNumberYesOrNo === true) {
+//     var userInput = prompt("Perfect! Please enter a number.");
+//     var userInt = parseInt(userInput);
+//
+//     console.log(userInt);
+//     console.log(typeof userInt);
+// } else if(userEnterNumberYesOrNo === false) {
+//     alert("Oook, bye Felicia!");
+// } else if (isNaN(userInt)) {
+//     alert("You did NOT enter a number. Please enter a number.");
+// } else if (!isNaN(userInt)) {
+//     alert("Your chosen number + 100 = " + (userInt + 100));
+// }else if (userInput % 2 === 1) {
+//     alert("Your number is odd");
+// }else if (Math.sign(userInput) === 1) {
+//     alert("Your chosen number is Positive.")
+// } else {
+//     alert("Your chosen number is Negative.")
+// }
