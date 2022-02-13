@@ -2,15 +2,15 @@
 
 //While Loop Exercise
 
-var i = 1;
-
-while (i < 65536) {
-
-        console.log(i *= 2);
-
-}
-
-
+// var i = 1;
+//
+// while (i < 65536) {
+//
+//         console.log(i *= 2);
+//
+// }
+//
+//
 
 
 
@@ -34,29 +34,27 @@ while (i < 65536) {
 //representing the amount of cones to sell before you start your loop.
 
 
+var allCones = Math.floor(Math.random() * 50) + 50;
+    //Math.floor(Math.random() * 50) + 50;
+// This expression will generate a random number between 1 and 5
+var conesBought = Math.floor(Math.random() * 5) + 1;
 
-//
-// var allCones = 3
-//     //Math.floor(Math.random() * 50) + 50;
-// // This expression will generate a random number between 1 and 5
-// var conesBought = Math.floor(Math.random() * 5) + 1;
-//
-//
-// console.log(allCones);
-//
-// do { //each iteration is a new customer
-//     //number of cones being bought from allCones
-//     var conesRemaining = allCones - conesBought;
-//     if (conesBought < 6) {
-//         console.log("No problem, I can sell you " + conesBought + " from my inventory of " + allCones);
-//         console.log(conesRemaining);
-//     }else if (conesBought > conesRemaining) {
-//         console.log("Sorry I can only sell you a maximum of " + conesRemaining)
-//     }
-//
-//
-//
-//      }while (allCones === 0);
+
+console.log(allCones);
+
+do { //each iteration is a new customer
+    //number of cones being bought from allCones
+    var conesRemaining = allCones - conesBought;
+    if (conesBought < 6) {
+        console.log("No problem, I can sell you " + conesBought + " from my inventory of " + allCones);
+        console.log(conesRemaining);
+    }else if (conesBought > conesRemaining) {
+        console.log("Sorry I can only sell you a maximum of " + conesRemaining)
+    }
+
+
+
+     }while (allCones === 0);
 
 
 
