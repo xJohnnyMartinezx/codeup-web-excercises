@@ -26,13 +26,49 @@
      * string, and <li> tags around each planet.
      */
 
-    planetsString = planetsArray.join("\n")
+    planetsString = planetsArray.join("<br>");
+    console.log(planetsString);
+
+
+    function planetUl(arrOfPlanets) {
+        var newString = "<ul>";
+            for (var i =0; i < arrOfPlanets.length; i++) {
+                newString += "<li>";
+                newString += arrOfPlanets[i];
+                newString += "</li>";
+            }
+            newString += "</ul>";
+        return newString
+    }
+
+    console.log(planetUl(planetsArray))
 
 
 
-    console.log(planetsString)
 
-    console.log(typeof planetsString)
+   //  planetsString = planetsArray.join("\n")
+   //
+   //
+   //
+   //  console.log(planetsString)
+   //
+   //  console.log(typeof planetsString)
+   //
+   //  var planetListString = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune";
+   //  var planetListArray = planetListString.split(",")
+   //  console.log(planetListArray);
+   //  planetListArray.push("</li></ul>")
+   //  planetListArray.unshift("<ul><li>")
+   //
+   //  console.log(planetListArray)
+   //
+   // var newString = planetListArray.join("</li><li>")
+   //  console.log(newString)
+
+
+
+
+
 
 
 
