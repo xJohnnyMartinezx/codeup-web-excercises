@@ -66,20 +66,16 @@
         {name: 'George', amount: 320}
     ];
 
-    shoppers.forEach(function (shopper){
+    shoppers.forEach(function (shopper) {
         if (shopper.amount < 200) {
             console.log(shopper.name + " Doesn't get a discount.")
         } else if (shopper.amount > 200) {
-                console.log(shopper.name + "'s total is: $" + shopper.amount.toFixed(2) + "\n" + shopper.name + "'s discount is: $" + (shopper.amount * .12).toFixed(2)
-                    + "\n" + shopper.name + "'s total after the discount is: $" + (shopper.amount - (shopper.amount * .12)).toFixed(2));
-            } else {
-                console.log(shopper.name + " needs to pay " + shopper.amount);
-            }
+            console.log(shopper.name + "'s total is: $" + shopper.amount.toFixed(2) + "\n" + shopper.name + "'s discount is: $" + (shopper.amount * .12).toFixed(2)
+                + "\n" + shopper.name + "'s total after the discount is: $" + (shopper.amount - (shopper.amount * .12)).toFixed(2));
+        } else {
+            console.log(shopper.name + " needs to pay " + shopper.amount);
+        }
     })
-
-
-
-
 
 
     /** TODO:
@@ -98,26 +94,44 @@
     var books = [{
         title: "The Blue Sun",
         author:
-            {firstName: "J.B.",
-                lastName: "Williams"}},
+            {
+                firstName: "J.B.",
+                lastName: "Williams"
+            }
+    },
 
-        {title: "Stepping Stone",
-        author:
-            {firstName: "Mark",
-                lastName: "Powers"}},
-        {title: "How to Dig a Hole to China",
-        author:
-            {firstName: "Homer",
-                lastName: "Simpson"}},
-        {title: "Coding is Hard",
-        author:
-            {firstName: "Johnny",
-                lastName: "Martinez"}},
-        {title: "The Pickle Rick Story",
-        author:
-            {firstName: "Rick",
-                lastName: "Sanchez"}
-    }]
+        {
+            title: "Stepping Stone",
+            author:
+                {
+                    firstName: "Mark",
+                    lastName: "Powers"
+                }
+        },
+        {
+            title: "How to Dig a Hole to China",
+            author:
+                {
+                    firstName: "Homer",
+                    lastName: "Simpson"
+                }
+        },
+        {
+            title: "Coding is Hard",
+            author:
+                {
+                    firstName: "Johnny",
+                    lastName: "Martinez"
+                }
+        },
+        {
+            title: "The Pickle Rick Story",
+            author:
+                {
+                    firstName: "Rick",
+                    lastName: "Sanchez"
+                }
+        }]
 
     // console.log(books[2].title)
     // console.log(books[2].author.firstName)
@@ -153,11 +167,7 @@
     for (var i = 0; i < books.length; i++) {
         console.log("Book # " + [i + 1] + "\n" + books[i].title + "\n" + books[i].author.firstName +
             " " + books[i].author.lastName + "\n" + "---");
-
     }
-
-
-
 
 
     /**
@@ -170,5 +180,4 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-
-})();
+})
