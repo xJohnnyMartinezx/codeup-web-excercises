@@ -28,30 +28,30 @@
 // Hard code some values in that object, then log it and its properties to the console
 
 
-var person;
-person = {
-    names: ["Johnny", "Martinez"],
-    dob: "01/01/1988",
-    occupation: "Student"
-}
-console.log(person);
-console.log(person.names);
-console.log(person.names[0]);
-console.log(person.names[1]);
-console.log(person.dob);
-console.log(person.occupation);
-
-person.names.forEach((name)=> {
-    console.log(name);
-})
-
-var person2 = Object.create(person);
-person2["names"] = ["Ry", "Sutton"];
-person2["occupation"] = "intructor";
-person2.dob = "02.02.1994";
-console.log(person2);
-person2["dob"] = "02.03.1994";
-console.log(person2);
+// var person;
+// person = {
+//     names: ["Johnny", "Martinez"],
+//     dob: "01/01/1988",
+//     occupation: "Student"
+// }
+// console.log(person);
+// console.log(person.names);
+// console.log(person.names[0]);
+// console.log(person.names[1]);
+// console.log(person.dob);
+// console.log(person.occupation);
+//
+// person.names.forEach((name)=> {
+//     console.log(name);
+// })
+//
+// var person2 = Object.create(person);
+// person2["names"] = ["Ry", "Sutton"];
+// person2["occupation"] = "intructor";
+// person2.dob = "02.02.1994";
+// console.log(person2);
+// person2["dob"] = "02.03.1994";
+// console.log(person2);
 
 
 // function Person(name, occupation, dob) {
@@ -71,33 +71,33 @@ console.log(person2);
 // postal code
 // email address
 // Hard code some values in that object, then log it and its properties to the console
-
-var contactInfo = {
-    phone: "555-555-5555",
-    addressNumber: "123",
-    streetName: "Fake St.",
-    city: "Dallas",
-    state: "Texas",
-    zipcode: "85449",
-    email: "fakecontact@gmail.com"
-}
-
-console.log(contactInfo);
-
-//Defines the contactInfo object
-function ContactInfo(phone,addressNumber,streetName,city,state,zipcode,email) {
-    this.phone = phone;
-    this.addressNumber = addressNumber;
-    this.streetName = streetName;
-    this.city = city;
-    this.state = state;
-    this.zipcode = zipcode;
-    this.email = email;
-
-    var newContact = new ContactInfo("123-456-7899", "456", "Fake2 St.", "Dallas", "Texas", "89466", "fake2@gmail.com")
-    console.log(newContact)
-
-}
+//
+// var contactInfo = {
+//     phone: "555-555-5555",
+//     addressNumber: "123",
+//     streetName: "Fake St.",
+//     city: "Dallas",
+//     state: "Texas",
+//     zipcode: "85449",
+//     email: "fakecontact@gmail.com"
+// }
+//
+// console.log(contactInfo);
+//
+// //Defines the contactInfo object
+// function ContactInfo(phone,addressNumber,streetName,city,state,zipcode,email) {
+//     this.phone = phone;
+//     this.addressNumber = addressNumber;
+//     this.streetName = streetName;
+//     this.city = city;
+//     this.state = state;
+//     this.zipcode = zipcode;
+//     this.email = email;
+//
+//     var newContact = new ContactInfo("123-456-7899", "456", "Fake2 St.", "Dallas", "Texas", "89466", "fake2@gmail.com")
+//     console.log(newContact)
+//
+// }
 
 
 //////////////////////////////////////////////
@@ -132,3 +132,24 @@ function ContactInfo(phone,addressNumber,streetName,city,state,zipcode,email) {
 //         'nope@no-no-no.no'));
 //
 // console.log(person2.contactInfo.emailAddress);
+
+
+// var enterName = confirm("Would you like to enter a name?")
+// if (enterName === true) {
+//     var enterNameHere = prompt("Perfect, enter your first name here.")
+// }
+
+function getNames() {
+    var namesArr = [];
+    var hasMoreNames = true;
+    while (hasMoreNames) {
+    //    get names
+        //    prompt for names
+        namesArr.push(prompt("Please enter you name."))
+        //if they want more names, keep looping, if not break the loop.
+        hasMoreNames = confirm("Would you like to enter another name?")
+    }
+
+    return namesArr
+
+}
