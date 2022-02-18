@@ -139,17 +139,44 @@
 //     var enterNameHere = prompt("Perfect, enter your first name here.")
 // }
 
-function getNames() {
-    var namesArr = [];
-    var hasMoreNames = true;
-    while (hasMoreNames) {
-    //    get names
-        //    prompt for names
-        namesArr.push(prompt("Please enter you name."))
-        //if they want more names, keep looping, if not break the loop.
-        hasMoreNames = confirm("Would you like to enter another name?")
+// function getNames() {
+//     var namesArr = [];
+//     var hasMoreNames = true;
+//     while (hasMoreNames) {
+//     //    get names
+//         //    prompt for names
+//         namesArr.push(prompt("Please enter you name."))
+//         //if they want more names, keep looping, if not break the loop.
+//         hasMoreNames = confirm("Would you like to enter another name?")
+//     }
+//
+//     return namesArr
+//
+// }
+
+
+
+// var arrOfLetters = ["s", "t", "a", "t", "b", "a", "b", "s"]
+// var emptyArr= []
+// arrOfLetters.forEach(letter => emptyArr.push(letter));
+//
+// console.log(emptyArr);
+
+// Casey Edwards  9:07 AM
+//     :js: Warmup: Create a function which returns true if the given argument is a number, false if it is not a number
+
+function isNumber(input) {
+    if (!isNaN(input)) {
+        return true;
+    } else {
+        return false;
     }
-
-    return namesArr
-
 }
+
+
+console.log(isNumber("number"));
+console.log(isNumber(23));
+console.log(isNumber([23,12,405,55]));
+console.log(isNumber(false));
+console.log(isNumber(true));
+console.log(isNumber({key: "value", key2: "value2"}));
