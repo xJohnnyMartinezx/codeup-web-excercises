@@ -1,0 +1,15 @@
+h1.fancy-header{
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #ca3a11; text-decoration: underline;
+}
+
+#container {
+    background: #333333;
+}
+
+#container {
+    background-image: url(/img/black-background.jpeg); background-size: 1920px 1080px;
+}
