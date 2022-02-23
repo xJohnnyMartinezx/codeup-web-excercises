@@ -8,8 +8,43 @@ h1, h2, h3, h4, h5, h6{
 
 #container {
     background: #333333;
+    font-family: "Roboto", Calibri, Tahoma, sans-serif;
 }
 
 #container {
-    background-image: url(/img/black-background.jpeg); background-size: 1920px 1080px;
+    background-image: url(/img/black-background.jpeg);
+    background-size: 1920px 1080px;
+    background-position-x: center;
+
+
+}
+
+.white-text {
+    color: white;
+}
+
+li:before { content: '🖥️'; margin-left: -20px; margin-right: 10px; }
+
+table, th, td {
+    border: 1px solid;
+    border-color: #ca3a11;
+}
+
+a:link {
+    color:white;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:red;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:green;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:lightgreen;
 }
