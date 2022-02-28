@@ -165,18 +165,81 @@
 // Casey Edwards  9:07 AM
 //     :js: Warmup: Create a function which returns true if the given argument is a number, false if it is not a number
 
-function isNumber(input) {
-    if (!isNaN(input)) {
-        return true;
-    } else {
-        return false;
-    }
-}
+// function isNumber(input) {
+//     if (!isNaN(input)) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+//
+//
+// console.log(isNumber("number"));
+// console.log(isNumber(23));
+// console.log(isNumber([23,12,405,55]));
+// console.log(isNumber(false));
+// console.log(isNumber(true));
+// console.log(isNumber({key: "value", key2: "value2"}));
 
 
-console.log(isNumber("number"));
-console.log(isNumber(23));
-console.log(isNumber([23,12,405,55]));
-console.log(isNumber(false));
-console.log(isNumber(true));
-console.log(isNumber({key: "value", key2: "value2"}));
+
+//2/28/2022 WARMUP
+
+// Warmup: Write a function called removeAll that takes two parameters.
+//     One that represents an array and another that represents a value to be removed from that array.
+//     When called this function should return an array with all the values of the original array except the specified value to be removed.
+//     ex:
+
+var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+
+// function removeAll(param1, param2) {
+//     for (let i = 0; i < bugs.length; i++) {
+//         if (i === param2) {
+//             bugs.slice(param2);
+//         }
+//         console.log(i);
+//         console.log(bugs);
+//     }
+// }
+
+// var result = bugs.slice(param2);
+//     console.log(result);
+//     return result;
+
+// }
+
+// function removeAll(param1, param2) {
+//
+//     var newArr = [];
+//
+//     bugs.forEach(function (bug){
+//         if (param2 !== bug) {
+//             newArr.push(bug);
+//         }
+//     });
+//     return newArr;
+//
+// }
+// var newArr = []
+//
+// for (let i = 0; i < bugs.length; i++) {
+//     if (param2 === bugs[i]) {
+//
+//         continue;
+//     }
+//     newArr.push(bugs[i]);
+// }
+//     return newArr;
+// }
+//
+//
+//
+//
+// console.log(removeAll(bugs, "ant"));
+
+// // should print
+// ['mosquito', 'scorpion', 'mosquito', 'typo', 'reference error', 'type error']
+//
+
+
+
