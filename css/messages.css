@@ -1,0 +1,71 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+    font-size: 14px;
+}
+
+.message-info {
+    background-color: lightsteelblue;
+    color: #47478f;
+    /*border-style: solid;*/
+    border-radius: 3px;
+    border: 2px solid grey;
+    border: #848487;
+    width: 40%;
+    /*justify-content: center;*/
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left:100px;
+
+}
+
+.message-success {
+    background-color: rgba(169, 239, 169, 0.99);
+    color: #4a944a;
+    border-style: solid;
+    border-radius: 3px;
+    border: #848487;
+    width: 40%;
+    justify-content: center;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left:100px;
+
+}
+
+.message-warning {
+    background-color: #e7ea8a;
+    color: #7e7e3e;
+    border-style: solid;
+    border-radius: 3px;
+    border: #848487;
+    width: 40%;
+    justify-content: center;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left:100px;
+
+}
+
+.message-error {
+    background-color: #ee9090;
+    color: #984c4c;
+    border-style: solid;
+    border-radius: 3px;
+    border: #848487;
+    width: 40%;
+    justify-content: center;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left:100px;
+
+
+
+}
