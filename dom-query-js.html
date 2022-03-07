@@ -58,7 +58,7 @@
         for (let i = 0; i < listItems.length; i+=2) {
             console.log(listItems[i])
 
-            var otherItemColor = listItems[i].style.color = "grey"
+            listItems[i].style.color = "grey"
         }
 
 
@@ -73,14 +73,14 @@
 
         console.log(dbid1)
 
-        // // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = document.getElementsByClassName("sub-paragraph")[0];
-        // console.log(subParagraphs);
-        //
-        // // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        //
-        // subParagraphs.innerText = "Mission Accomplished";
-        //
+        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+        var subParagraphs = document.getElementsByClassName("sub-paragraph")[0];
+        console.log(subParagraphs);
+
+        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+
+        subParagraphs.innerText = "Mission Accomplished";
+
 
     })();
 </script>
