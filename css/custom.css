@@ -1,13 +1,17 @@
 .jumbotron {
     background-image: url("/img/pizza-world.png");
+    background-size: cover;
 }
 
 .display-4 {
-    background-color: #E6ECF0;
+    background-color: #ffffff;
     opacity: 60%;
-    display: flex;
-    justify-content: center;
+    width: 100%;
 }
  .card {
-     width: 78rem;
+     width: auto;
+ }
+
+ .card-header {
+     width: auto;
  }

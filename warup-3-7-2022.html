@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Warmup</title>
+</head>
+<body>
+
+<select>
+    <ul id="pets">
+
+    </ul>
+
+
+</select>
+
+<!--Create an HTML file with only an unordered list with the id of pets in the body.
+ Within an inline script declare and array called pets with four elements.
+ Loop through the list and add each element as a list item to the ul.-->
+
+<script>
+    "use strict";
+
+
+        var petsArr = ["dog","cat","fish","ninja turtle"]
+
+        // for (let i = 0; i < petsArr.length; i++) {
+        //     console.log(petsArr[i])
+        //     document.pets.push[i]
+        //
+        // }
+
+        var petList = document.getElementById("pets")
+
+        for (let i = 0; i < petsArr.length; i++) {
+
+            var li = document.createElement("li");
+
+            li.innerText = petsArr[i];
+
+            petList.appendChild(li)
+
+        }
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
