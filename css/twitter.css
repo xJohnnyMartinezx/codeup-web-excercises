@@ -66,3 +66,7 @@ a {
 .text-muted {
     color: var(--main-link-color);
 }
+
+#main-content {
+    background-color: r 230, g 236, b 240 ;
+}
