@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<audio id="win-error">
+    <source src="media-sounds/windows_error.mp3">
+</audio>
+<audio id="dogs">
+    <source src="media-sounds/who_let_the_dogs_out.mp3">
+</audio>
+
+
+
+<script>
+    "use strict";
+
+    // 2konami.html?_ijt=a0vhpdora39t19v0gea2n12f4t&_ij_reload=RELOAD_ON_SAVE:18 38x2
+    // 2konami.html?_ijt=a0vhpdora39t19v0gea2n12f4t&_ij_reload=RELOAD_ON_SAVE:18 40x2
+    // konami.html?_ijt=a0vhpdora39t19v0gea2n12f4t&_ij_reload=RELOAD_ON_SAVE:18 37
+    // konami.html?_ijt=a0vhpdora39t19v0gea2n12f4t&_ij_reload=RELOAD_ON_SAVE:18 39
+    // konami.html?_ijt=a0vhpdora39t19v0gea2n12f4t&_ij_reload=RELOAD_ON_SAVE:18 37
+    // konami.html?_ijt=a0vhpdora39t19v0gea2n12f4t&_ij_reload=RELOAD_ON_SAVE:18 39
+    // konami.html?_ijt=a0vhpdora39t19v0gea2n12f4t&_ij_reload=RELOAD_ON_SAVE:18 66
+    // konami.html?_ijt=a0vhpdora39t19v0gea2n12f4t&_ij_reload=RELOAD_ON_SAVE:18 65
+    // konami.html?_ijt=a0vhpdora39t19v0gea2n12f4t&_ij_reload=RELOAD_ON_SAVE:18 13
+
+    $(document).ready(function () {
+
+            let myKonami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
+            let konamiPosition = 0;
+            var dogsImg = new Image(500, 208);
+            dogsImg.src = "img/who-let-the-dogs-out.gif"
+
+            
+            $(document).keyup(function (e) {
+                    console.log(e.keyCode);
+                    let expectedKey = myKonami[konamiPosition];
+                    let keyPress = e.keyCode;
+
+                    if (expectedKey === keyPress) {
+                        konamiPosition++;
+                        if (konamiPosition === myKonami.length) {
+                            $("audio#dogs")[0].play()
+                            $('body').append(dogsImg).css("background-color", "black");
+
+                            konamiPosition = 0;
+                        }
+                    } else {
+                        konamiPosition = 0;
+                        $("audio#win-error")[0].play()
+                        alert("You shall NOT pass....not with those keys!");
+
+
+                    }
+                }
+            )
+        }
+    );
+</script>
+</body>
+</html>
