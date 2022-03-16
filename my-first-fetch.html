@@ -6,8 +6,13 @@
 </head>
 <body>
 
-<div id="coin-data">
+<div id="bitcoincoin-data">
 </div>
+
+<div id="cardano-data">
+</div>
+
+<div id="decentraland-data"></div>
 
 
 <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
@@ -45,7 +50,7 @@
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-host": "coingecko.p.rapidapi.com",
-                    "x-rapidapi-key": "5af55b9158msh4f365e1fd55df68p1ea6fcjsn54ecf2e2f5c1"
+                    "x-rapidapi-key": RAPID_KEY
                 }
             })
                 .then(response => response.json()),
@@ -54,7 +59,7 @@
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-host": "coingecko.p.rapidapi.com",
-                    "x-rapidapi-key": "5af55b9158msh4f365e1fd55df68p1ea6fcjsn54ecf2e2f5c1"
+                    "x-rapidapi-key": RAPID_KEY
                 }
             })
                 .then(response => response.json())])
@@ -109,9 +114,25 @@
 
                 html+="<ul>"
 
+                html+= "<li>" + "$" + btcPrice + "</li>";
+
+                $("#bitcoincoin-data").html(html);
+
+                html+="</ul>"
+
+                html+="<ul>"
+
+                html+= "<li>" + "$" + adaPrice + "</li>";
+
+                $("#cardano-data").html(html);
+
+                html+="</ul>"
+
+                html+="<ul>"
+
                 html+= "<li>" + "$" + manaPrice + "</li>";
 
-                $("#coin-data").html(html);
+                $("#decentraland-data").html(html);
 
                 html+="</ul>"
 
