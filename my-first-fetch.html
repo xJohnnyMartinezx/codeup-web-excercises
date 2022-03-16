@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="bitcoincoin-data">
+</div>
+
+<div id="cardano-data">
+</div>
+
+<div id="decentraland-data"></div>
+
+
+<script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+<script SRC="js/keys.js"></script>
+<script>
+  "use strict";
+  $(document).ready(function () {
+
+
+    // DO FETCH STUFF
+    // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&units=imperial&appid=" + OWN_KEY)
+    // .then(response => response.json())
+    // .then(data => {
+    //     console.log(data)
+    //     let html = "";
+    //     html+="<ul>"
+    //     for (let i = 0; i < 5; i++) {
+    //         let dailyTemp = data.daily[i].temp.day;
+    //         // console.log(data.daily[i].temp.day);
+    //
+    //         html+= "<li>" + dailyTemp + "</li>";
+    //     }
+    //     $("#daily-temp").html(html);
+    //     html+="</ul>"
+    //
+    //
+    // });
+    const baseUrl = "https://coingecko.p.rapidapi.com";
+    const coinListPath = "/coins/list";
+    const coinPriceBtcAdaMana = "/simple/price?ids=bitcoin%2Ccardano%2Cdecentraland&vs_currencies=usd"
+
+    // var coinIdArr = [{id:"bitcoin"}, {id:"cardano"}, {id:"decentraland"}];
+    Promise.all([
+      fetch(baseUrl + coinListPath, {
+        "method": "GET",
+        "headers": {
+          "x-rapidapi-host": "coingecko.p.rapidapi.com",
+          "x-rapidapi-key": RAPID_KEY
+        }
+      })
+              .then(response => response.json()),
+      fetch(baseUrl + coinPriceBtcAdaMana, {
+
+        "method": "GET",
+        "headers": {
+          "x-rapidapi-host": "coingecko.p.rapidapi.com",
+          "x-rapidapi-key": RAPID_KEY
+        }
+      })
+              .then(response => response.json())])
+
+            // console.log(response.json())
+            .then(data => {
+              console.log(data)
+              var nameData = data[0];
+
+              // --------------Coin Name and Ticker--------------
+              for (let i = 0; i < nameData.length; i++) {
+                if (nameData[i].id === "bitcoin") {
+                  console.log(nameData[i].name)
+                  console.log(nameData[i].symbol)
+                  var btcName = nameData[i].name
+                  var btcTicker = nameData[i].symbol
+                }
+
+              }
+
+              for (let i = 0; i < nameData.length; i++) {
+                if (nameData[i].id === "cardano") {
+                  console.log(nameData[i].name)
+                  console.log(nameData[i].symbol)
+                  var adaName = nameData[i].name
+                  var adaTicker = nameData[i].symbol
+                }
+              }
+
+
+              for (let i = 0; i < nameData.length; i++) {
+                if (nameData[i].id === "decentraland") {
+                  console.log(nameData[i].name)
+                  console.log(nameData[i].symbol)
+                  var manaName = nameData[i].name
+                  var manaTicker = nameData[i].symbol
+                }
+              }
+
+
+              // ----------Coin Prices------------
+              var btcPrice = data[1].bitcoin.usd
+              console.log(btcPrice)
+
+              var adaPrice = data[1].cardano.usd
+              console.log(adaPrice)
+
+              var manaPrice = data[1].decentraland.usd
+              console.log(manaPrice)
+
+              let html = "";
+
+              html+="<ul>"
+
+              html+= "<li>" + "$" + btcPrice + "</li>";
+
+              $("#bitcoincoin-data").html(html);
+
+              html+="</ul>"
+
+              html+="<ul>"
+
+              html+= "<li>" + "$" + adaPrice + "</li>";
+
+              $("#cardano-data").html(html);
+
+              html+="</ul>"
+
+              html+="<ul>"
+
+              html+= "<li>" + "$" + manaPrice + "</li>";
+
+              $("#decentraland-data").html(html);
+
+              html+="</ul>"
+
+            })
+  })
+
+
+
+
+  //     let html = "";
+  //     html+="<ul>"
+  //     for (let i = 0; i < 5; i++) {
+  //         let dailyTemp = data.daily[i].temp.day;
+  //         // console.log(data.daily[i].temp.day);
+  //
+  //         html+= "<li>" + dailyTemp + "</li>";
+  //     }
+  //     $("#daily-temp").html(html);
+  //     html+="</ul>"
+  //
+  //
+  // });
+</script>
+</body>
+</html>
