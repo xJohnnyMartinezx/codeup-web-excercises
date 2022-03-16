@@ -5,18 +5,16 @@ $(document).ready(function (){
 
     $("body > dl > dd").addClass("invisible")
 
-    var content = $(".invisible").text()
+    $(".invisible").text()
 
-    var visible = $(".invisible").css("visibility", "hidden")
+    $(".invisible").css("visibility", "hidden")
 
 
     $("#toggle").click(function () {
-            // $(visible).toggleClass("invisible")
-        // if($(".invisible").attr("style") === true) {
+
            if ($(".invisible").attr("style")) {
                $(".invisible").removeAttr("style")
            }else {$(".invisible").css("visibility", "hidden")}
-        // }
 
     })
 
