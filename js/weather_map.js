@@ -1,22 +1,8 @@
 "use strict";
 
 
-    // Starting Points
-
-    let startLat = 32.7767;
-    let startLong = -96.7970;
-
-    //Map variables
-
-    let map;
-    let marker;
-    // let popup;
-
-
-    getWeatherData(startLat, startLong)
-
     function getWeatherData(lat, lon) {
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${startLat}&lon=${startLong}&units=imperial&appid=${OWN_KEY}`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${OWN_KEY}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -72,11 +58,11 @@
         return new Date(unixDate * 1000).toISOString().split("T")[0];
     }
 
-    $('#submit').click(function (e) {
-        e.preventDefault();
-        let userLat = $('#lat').val();
-        let userLon = $('#lon').val();
-        getWeatherData(userLat, userLon);
-    })
+    // $('#submit').click(function (e) {
+    //     e.preventDefault();
+    //     let userLat = $('#lat').val();
+    //     let userLon = $('#lon').val();
+    //     getWeatherData(userLat, userLon);
+    // })
 
 

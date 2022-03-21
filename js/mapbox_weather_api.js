@@ -1,25 +1,68 @@
 "use strict";
 
 
+let map;
+let marker;
+let geocoder;
+
+initialize()
+setGeocoderEventListener()
+
+function initialize() {
 
 
-mapboxgl.accessToken = MAP_BOX;
-map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    zoom: 10,
-    center: [startLong, startLat]
-});
+    mapboxgl.accessToken = MAP_BOX;
+    map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-96.7970, 32.7767]
+    });
+    getWeatherData(map.getCenter().lat, map.getCenter().lng)
+// console.log(map.getCenter().lat)
 
-marker = new mapboxgl.Marker({
-    color: "green",
-    draggable: true
-}).setLngLat([startLong, startLat])
-    .addTo(map)
-console.log(marker)
+    geocoder = new MapboxGeocoder({
+        accessToken: MAP_BOX,
+        mapboxgl: mapboxgl,
+        // maker: false
+    });
 
-function onDragEnd() {
-    const lngLat = marker.getLngLat();
-    console.log(marker)
+    map.addControl(geocoder)
+
+
 }
-marker.on('dragend', onDragEnd);
+
+
+
+    marker = new mapboxgl.Marker({
+        color: "green",
+        draggable: true
+    }).setLngLat([map.getCenter().lng, map.getCenter().lat])
+        .addTo(map)
+
+
+    function onDragEnd() {
+        const lngLat = marker.getLngLat();
+        getWeatherData(lngLat.lat, lngLat.lng)
+    }
+
+    marker.on('dragend', onDragEnd);
+
+
+
+
+
+
+    function setGeocoderEventListener() {
+        geocoder.on("result", function (e) {
+            let searchCoordLng = e.result.geometry.coordinates[0];
+            let searchCoordLat = e.result.geometry.coordinates[1];
+            getWeatherData(searchCoordLat, searchCoordLng);
+
+
+        });
+
+    }
+
+
+
