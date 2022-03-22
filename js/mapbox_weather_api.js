@@ -27,11 +27,10 @@ function initialize() {
     geocoder = new MapboxGeocoder({
         accessToken: MAP_BOX,
         mapboxgl: mapboxgl,
-        // maker: false
-    });
+        marker: false
+    })
 
     map.addControl(geocoder)
-
 
 }
 
@@ -41,7 +40,6 @@ marker = new mapboxgl.Marker({
     draggable: true
 }).setLngLat([map.getCenter().lng, map.getCenter().lat])
     .addTo(map)
-
 
 
 function onDragEnd() {
@@ -61,7 +59,6 @@ marker.on('dragend', onDragEnd);
 // }
 
 
-
 function setGeocoderEventListener() {
     geocoder.on("result", function (e) {
         let searchCoordLng = e.result.geometry.coordinates[0];
@@ -69,14 +66,7 @@ function setGeocoderEventListener() {
         console.log(e)
         getWeatherData(searchCoordLat, searchCoordLng);
 
-        if (marker) {
-            marker.remove();
-        }
-
-        marker(e.result.geometry.coordinates);
-        // city = currentCity(e.result.place_name);
-
-
+        marker.setLngLat([searchCoordLng, searchCoordLat]);
 
     });
 
@@ -94,11 +84,6 @@ for (const input of inputs) {
         map.setStyle('mapbox://styles/mapbox/' + layerId);
     };
 }
-
-// function extractCurrentCity(city) {
-//     console.log(city)
-//
-// }
 
 
 

@@ -37,27 +37,30 @@ function buildWeatherCard(day) {
     let weather = extractWeatherData(day);
     let formattedDate = formatDate(weather.date);
 
-    let format = {
-        day: "numeric",
-        month: "2-digit",
-        year: "numeric"
-    };
 
     // console.log(weather.date.toLocaleString("en-US", format))
     //language=HTML
     html += `
       
         <section class="col-12 col-sm-6 col-lg-4 col-xl-4 col-xxl-2 mx-auto mt-2">
-            <div class="card-header mx-auto">
+            <div class="card-header mb-3 mx-auto" style="border-radius: 50px; text-align: center;">
                 ${formattedDate}
             </div>
-            <div id="five-day-forecast" class="card border-5 mx-0">
-                <p>Average Daytime Temperature: <b>${weather.dailyTemp} °F</b> </p>
-                <p>Description: <b>${weather.description}</b></p>
-                <p>Humidity: <b>${weather.humidity}%</b></p>
-                <p>Wind speed is : <b>${weather.wind_speed} MPH</b></p>
-                <p>Pressure: <b>${weather.pressure} hPa</b></p>
-
+            
+            <div id="five-day-forecast" class="card border-5 px-0">
+                <p>Average Daytime Temperature:</p>
+                <p><b style="color: #0fb784">${weather.dailyTemp} °F</b></p>
+                <p>Description:</p>
+                <p><b style="color: #0fb784">${weather.description}</b></p>
+                <div class="hidden-info">
+                <p>Humidity:</p>
+                <p><b style="color: #0fb784">${weather.humidity}%</b></p>
+                <p>Wind speed is :</p>
+                <p><b style="color: #0fb784">${weather.wind_speed} MPH</b></p>
+                <p>Pressure:</p>
+                <p><b style="color: #0fb784">${weather.pressure} hPa</b></p>
+                </div>
+            
             </div>
         </section>`
     return html
@@ -66,7 +69,8 @@ function buildWeatherCard(day) {
 }
 
 function formatDate(unixDate) {
-    return new Date(unixDate * 1000).toISOString().split("T")[0];
+    // return new Date(unixDate * 1000).toISOString().split("T")[0];
+    return new Date(unixDate * 1000).toLocaleDateString().split("T")[0];
 }
 
 
