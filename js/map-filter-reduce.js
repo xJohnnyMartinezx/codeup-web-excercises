@@ -39,45 +39,90 @@ const users = [
 ];
 
 
-//--------------Exercise 1-2----------------
-
-// var moreThanTwoLanguages = users.filter(function(n){
-//     return n.languages.length >= 3;
-// })
-
-var moreThanTwoLanguages = users.filter(n => n.languages.length >= 3);
-
-
+// //--------------Exercise 1-2----------------
+//
+// // var moreThanTwoLanguages = users.filter(function(n){
+// //     return n.languages.length >= 3;
+// // })
+//
+// var moreThanTwoLanguages = users.filter(n => n.languages.length >= 3);
+//
+//
 // console.log(moreThanTwoLanguages)
+//
+//
+// //--------------Exercise 3----------------
+//
+// var userEmail = users.map(n => n.email);
+//
+// console.log(userEmail);
+//
+//
+// //--------------Exercise 4----------------
+//
+//
+// var totalYearsOfExp = users.reduce((total,years) => {
+//     return total + years.yearsOfExperience
+// }, 0);
+// console.log("total yrs of exp: " + totalYearsOfExp);
+//
+// var averageYears = totalYearsOfExp/users.length;
+// console.log(averageYears)
+//
+// //--------------Exercise 5----------------
+//
+// // var longestEmail = user.reduce((, ))
+//
+// // console.log(userEmail[0].length)
+//
+// let longestEmail = users.reduce((longest, user) => {
+//     if (user.email.length > longest.length) {
+//         longest = user.email;
+//     }
+//     return longest
+// }, "")
+// console.log(longestEmail)
+//
+//
+//
+// //--------------Exercise 6----------------
+//
+// // var userNames = users.reduce((strgOfNames, names) => {
+// //     var nameStrg = names.name.split()
+// //     return strgOfNames + nameStrg + " "
+// //
+// // }, "")
+//
+// var instructorString = users.reduce((resultStrg, user) => {
+//     return resultStrg += user.name
+// }, "You're instructors are: ")
+// // console.log(typeof(userNames))
+// console.log(instructorString)
 
 
-//--------------Exercise 3----------------
-
-var userEmail = users.map(n => n.email);
-
-console.log(userEmail);
 
 
-//--------------Exercise 4----------------
+let languages = users.reduce((listOfLanguages, user) => {
+    // if (!listOfLanguages.includes(user))
+    user.languages.forEach(function (lang) {
+        if (!listOfLanguages.includes(lang)) {
+            listOfLanguages.push(lang)
+        }
+    })
+    return listOfLanguages
+},[]);
+
+console.log(languages)
 
 
-var totalYearsOfExp = users.reduce((total,years) => {
-    return total + years.yearsOfExperience
-}, 0);
-console.log("total yrs of exp: " + totalYearsOfExp);
-
-var averageYears = totalYearsOfExp/users.length;
-console.log(averageYears)
-
-//--------------Exercise 5----------------
-
-// var longestEmail = userEmail.reduce()
-
-// function countLetters(l) {
-    const numOfChar = userEmail.split("");
-    console.log(numOfChar)
-    // const charCountObj = numOfChar.reduce(charCount, char) => {
-    //
-    // }
-
+// function pushUniqueLanguagesPerUser(user, listOfLanguages) {
+//     user.languages.forEach(function (lang) {
+//         if (!listOfLanguages.includes(lang)) {
+//             listOfLanguages.push(lang)
+//         }
+//     })
+//
 // }
+//
+// console.log(pushUniqueLanguagesPerUser())
+
